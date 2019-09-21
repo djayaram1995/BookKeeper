@@ -1,71 +1,70 @@
 package com.book.keeper.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class BookDetailsDto {
 
-	private String bib_key;
-	
-	private String preview;
-	
-	private String thumbnail_url;
-	
-	private String preview_url;
-	
-	private String info_url;
+	@JsonProperty("subtitle")
+	private String subtitle;
+	@JsonProperty("title")
+	private String title;
+	@JsonProperty("url")
+	private String url;
+	@JsonProperty("notes")
+	private String notes;
+	@JsonProperty("publish_date")
+	private String publishDate;
 
-	public String getBib_key() {
-		return bib_key;
+	@JsonProperty("subtitle")
+	public String getSubtitle() {
+		return subtitle;
 	}
 
-	public void setBib_key(String bib_key) {
-		this.bib_key = bib_key;
+	@JsonProperty("subtitle")
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
 	}
 
-	public String getPreview() {
-		return preview;
+	@JsonProperty("title")
+	public String getTitle() {
+		return title;
 	}
 
-	public void setPreview(String preview) {
-		this.preview = preview;
+	@JsonProperty("title")
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getThumbnail_url() {
-		return thumbnail_url;
+	@JsonProperty("url")
+	public String getUrl() {
+		return url;
 	}
 
-	public void setThumbnail_url(String thumbnail_url) {
-		this.thumbnail_url = thumbnail_url;
+	@JsonProperty("url")
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
-	public String getPreview_url() {
-		return preview_url;
+	@JsonProperty("notes")
+	public String getNotes() {
+		return notes;
 	}
 
-	public void setPreview_url(String preview_url) {
-		this.preview_url = preview_url;
+	@JsonProperty("notes")
+	public void setNotes(String notes) {
+		this.notes = notes;
 	}
 
-	public String getInfo_url() {
-		return info_url;
+	@JsonProperty("publish_date")
+	public String getPublishDate() {
+		return publishDate;
 	}
 
-	public void setInfo_url(String info_url) {
-		this.info_url = info_url;
+	@JsonProperty("publish_date")
+	public void setPublishDate(String publishDate) {
+		this.publishDate = publishDate;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("BookDetails [bib_key=");
-		builder.append(bib_key);
-		builder.append(", preview=");
-		builder.append(preview);
-		builder.append(", thumbnail_url=");
-		builder.append(thumbnail_url);
-		builder.append(", preview_url=");
-		builder.append(preview_url);
-		builder.append(", info_url=");
-		builder.append(info_url);
-		builder.append("]");
-		return builder.toString();
-	}
 }
