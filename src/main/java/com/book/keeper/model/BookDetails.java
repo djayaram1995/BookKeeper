@@ -1,5 +1,7 @@
 package com.book.keeper.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +12,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "book_details")
-public class BookDetails {
+public class BookDetails implements Serializable {
+	
+	private static final long serialVersionUID = -2648969757919112609L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

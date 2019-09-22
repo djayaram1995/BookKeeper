@@ -23,24 +23,24 @@ public class BookKeeperService {
 				System.out.println("bdd"+bdd);
 				BookDetails bd = mapper.readValue(mapper.writeValueAsString(bdd), BookDetails.class);
 				System.out.println(bd);
-				bookDao.save(bd);
+				BookDetails bdExist = bookDao.findByUrl(bd.getUrl());
+				if(bdExist == null) {
+					bookDao.save(bd);
+				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
 	public List<BookDetails> getAllBooks() {
-		ObjectMapper mapper = new ObjectMapper();
-		List<BookDetailsDto> bdd = null;
 		List<BookDetails> bd = (List<BookDetails>) bookDao.findAll();
-		try {
-			bdd = (List<BookDetailsDto>) mapper.readValue(mapper.writeValueAsString(bd), BookDetailsDto.class);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return bd;
 		
+	}
+	public String deleteBook(String url) {
+		BookDetails bd = bookDao.findByUrl(url);
+		bookDao.delete(bd);
+		return "deleted";
 	}
 	
 }

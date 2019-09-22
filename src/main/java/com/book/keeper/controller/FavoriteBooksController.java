@@ -2,10 +2,17 @@ package com.book.keeper.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpRequest;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.book.keeper.model.BookDetails;
@@ -25,8 +32,12 @@ public class FavoriteBooksController {
 	
 	@GetMapping("/list")
 	public List<BookDetails> getAllBook() {
-		
 		return bookKeeperService.getAllBooks();		
+	}
+	@DeleteMapping("/delete")
+	public String deleteBook(@RequestParam String url) {
+		
+		return bookKeeperService.deleteBook(url);		
 	}
 
 }

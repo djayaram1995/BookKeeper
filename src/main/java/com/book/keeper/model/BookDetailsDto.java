@@ -1,11 +1,14 @@
 package com.book.keeper.model;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class BookDetailsDto {
+public class BookDetailsDto implements Serializable  {
 
+	private static final long serialVersionUID = 4840908087662597009L;
 	@JsonProperty("subtitle")
 	private String subtitle;
 	@JsonProperty("title")

@@ -1,6 +1,11 @@
 package com.book.keeper.model;
 
-public class UserDTO {
+import java.io.Serializable;
+
+public class UserDTO  implements Serializable  {
+	
+	private static final long serialVersionUID = 7837012407991579156L;
+	
 	private String username;
 	private String password;
 

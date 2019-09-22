@@ -1,8 +1,12 @@
 package com.book.keeper.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class BookList {
+public class BookList implements Serializable  {
+	
+	private static final long serialVersionUID = 5268264474440467745L;
+	
 	private String start;
 	private String numFound;
 	private List<doc> docs;
