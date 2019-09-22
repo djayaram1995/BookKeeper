@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.book.keeper.model.BookDetailsDto;
+import com.book.keeper.model.BookDetails;
 import com.book.keeper.model.BookList;
 import com.book.keeper.service.OpenLibraryService;
 
@@ -26,7 +26,7 @@ public class OpenLibraryController {
 	
 	@RequestMapping({ "/getBook/{bookId}" })
 	@CrossOrigin("*")
-	public BookDetailsDto getBook(@PathVariable String bookId) {
+	public BookDetails getBook(@PathVariable String bookId) {
 		
 		return openLibraryService.getSelectedBook(bookId);
 	}

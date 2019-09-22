@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class BookDetailsDto implements Serializable  {
+public class BookDetails implements Serializable  {
 
 	private static final long serialVersionUID = 4840908087662597009L;
 	@JsonProperty("subtitle")

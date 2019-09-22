@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.book.keeper.model.BookDetails;
-import com.book.keeper.model.BookDetailsDto;
+import com.book.keeper.model.BookDetails;
 import com.book.keeper.service.BookKeeperService;
 
 @RestController
@@ -22,7 +22,7 @@ public class FavoriteBooksController {
 	
 	@PostMapping("/save")
 	@CrossOrigin("*")
-	public BookDetailsDto SaveBook(@RequestBody BookDetailsDto bookdetails) {
+	public BookDetails SaveBook(@RequestBody BookDetails bookdetails) {
 		bookKeeperService.saveBook(bookdetails);
 		return bookdetails;		
 	}
