@@ -21,16 +21,26 @@ public class FavoriteBooksController {
 	private BookKeeperService bookKeeperService;
 	
 	@PostMapping("/save")
+	@CrossOrigin("*")
 	public BookDetailsDto SaveBook(@RequestBody BookDetailsDto bookdetails) {
 		bookKeeperService.saveBook(bookdetails);
 		return bookdetails;		
 	}
+	@GetMapping("/isFavorite")
+	@CrossOrigin("*")
+	public boolean isFavoriteBook(@RequestParam String url) {
+		boolean isFavorite = false;
+		isFavorite = bookKeeperService.isFavorite(url);
+		return isFavorite;	
+	}
 	
 	@GetMapping("/list")
+	@CrossOrigin("*")
 	public List<BookDetails> getAllBook() {
 		return bookKeeperService.getAllBooks();		
 	}
 	@DeleteMapping("/delete")
+	@CrossOrigin("*")
 	public String deleteBook(@RequestParam String url) {
 		
 		return bookKeeperService.deleteBook(url);		

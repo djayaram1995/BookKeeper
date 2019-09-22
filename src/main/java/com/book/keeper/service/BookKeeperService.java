@@ -42,5 +42,9 @@ public class BookKeeperService {
 		bookDao.delete(bd);
 		return "deleted";
 	}
+	public boolean isFavorite(String url) {
+		BookDetails bd = bookDao.findByUrl(url);
+		return (bd != null);
+	}
 	
 }
