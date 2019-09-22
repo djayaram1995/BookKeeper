@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.book.keeper.model.BookDetails;
-import com.book.keeper.model.BookDetails;
 import com.book.keeper.service.BookKeeperService;
 
 @RestController

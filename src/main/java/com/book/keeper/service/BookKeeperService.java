@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.book.keeper.model.BookDetails;
-import com.book.keeper.model.BookDetails;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
