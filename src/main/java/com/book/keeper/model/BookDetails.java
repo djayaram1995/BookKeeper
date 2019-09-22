@@ -2,23 +2,13 @@ package com.book.keeper.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
-@Table(name = "book_details")
-public class BookDetails implements Serializable {
-	
-	private static final long serialVersionUID = -2648969757919112609L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class BookDetailsDto implements Serializable  {
+
+	private static final long serialVersionUID = 4840908087662597009L;
 	@JsonProperty("subtitle")
 	private String subtitle;
 	@JsonProperty("title")
@@ -79,4 +69,5 @@ public class BookDetails implements Serializable {
 	public void setPublishDate(String publishDate) {
 		this.publishDate = publishDate;
 	}
+
 }
