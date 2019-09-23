@@ -18,14 +18,14 @@ public class OpenLibraryController {
 	OpenLibraryService openLibraryService;
 	
 	@RequestMapping({ "/getBooks/{searchString}" })
-	@CrossOrigin("*")
+	
 	public BookList getBooks(@PathVariable String searchString) {
 		
 		return openLibraryService.getBooks(searchString);
 	}
 	
 	@RequestMapping({ "/getBook/{bookId}" })
-	@CrossOrigin("*")
+	
 	public BookDetails getBook(@PathVariable String bookId) {
 		
 		return openLibraryService.getSelectedBook(bookId);

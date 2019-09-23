@@ -46,7 +46,7 @@ public class JwtAuthController {
 	}
 
 	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
-	@CrossOrigin("*")
+	
 	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
 		return ResponseEntity.ok(userDetailsService.save(user));
 	}
